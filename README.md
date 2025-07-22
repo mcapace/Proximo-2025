@@ -1,1 +1,628 @@
-# Proximo-2025
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proximo Campaign Timeline 2025</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: #f5f7fa;
+      color: #2d3748;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    /* Main Container */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 40px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .header h1 {
+      color: #1a365d;
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      color: #718096;
+      font-size: 18px;
+    }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .legend-color {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+    }
+
+    .legend-color.wa { background: #3182ce; }
+    .legend-color.trade { background: #718096; }
+    .legend-color.social { background: #38b2ac; }
+    .legend-color.email { background: #d53f8c; }
+
+    /* Month Section */
+    .month-section {
+      margin-bottom: 60px;
+      border-left: 4px solid #e2e8f0;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .month-header {
+      background: #1a365d;
+      color: white;
+      display: inline-block;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      position: relative;
+      left: -34px;
+    }
+
+    /* Campaign Cards */
+    .campaign-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .campaign-card {
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .campaign-card:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Card Header */
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .category-tag {
+      padding: 6px 14px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    .tag-wa { background: #3182ce; }
+    .tag-trade { background: #718096; }
+    .tag-social { background: #38b2ac; }
+    .tag-email { background: #d53f8c; }
+
+    .due-badge {
+      background: #e53e3e;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .ready-badge {
+      background: #48bb78;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* Card Content */
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 8px;
+    }
+
+    .card-subtitle {
+      font-size: 14px;
+      color: #718096;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .deliverable-list {
+      list-style: none;
+    }
+
+    .deliverable-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 14px;
+    }
+
+    .deliverable-item:last-child {
+      border-bottom: none;
+    }
+
+    .deliverable-name {
+      color: #4a5568;
+    }
+
+    .deliverable-date {
+      font-weight: 600;
+      color: #2d3748;
+      background: white;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+
+    /* Phase Divider */
+    .phase-divider {
+      text-align: center;
+      margin: 50px 0;
+      padding: 25px;
+      background: linear-gradient(to right, #edf2f7, #e2e8f0, #edf2f7);
+      border-radius: 10px;
+    }
+
+    .phase-divider h2 {
+      color: #1a365d;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .phase-divider p {
+      color: #718096;
+      font-size: 16px;
+    }
+
+    /* Trade Summary */
+    .trade-summary {
+      background: #f7fafc;
+      border: 2px solid #cbd5e0;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 50px 0;
+    }
+
+    .trade-summary h3 {
+      text-align: center;
+      color: #2d3748;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .trade-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .trade-column h4 {
+      color: #1a365d;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .trade-item {
+      font-size: 14px;
+      margin: 8px 0;
+      color: #4a5568;
+    }
+
+    /* Added Value Section */
+    .added-value {
+      background: linear-gradient(135deg, #48bb78, #38a169);
+      color: white;
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .added-value h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .added-value .year {
+      font-size: 72px;
+      font-weight: 200;
+      margin: 20px 0;
+    }
+
+    .added-value-list {
+      list-style: none;
+      margin-top: 30px;
+      font-size: 16px;
+    }
+
+    .added-value-list li {
+      padding: 8px 0;
+    }
+
+    .added-value-list li::before {
+      content: "✓ ";
+      color: #f7fafc;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 20px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .campaign-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .legend {
+        gap: 15px;
+      }
+
+      .month-section {
+        padding-left: 20px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      
+      .main-container {
+        box-shadow: none;
+        padding: 20px;
+      }
+
+      @page {
+        size: landscape;
+        margin: 0.5in;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- Header -->
+    <div class="header">
+      <h1>Proximo Campaign Timeline</h1>
+      <p>Whisky Advocate & Wine Spectator Partnership 2025</p>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color wa"></div>
+        <span>Whisky Advocate</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color trade"></div>
+        <span>Trade</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color social"></div>
+        <span>Social Media</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color email"></div>
+        <span>Email</span>
+      </div>
+    </div>
+
+    <!-- Q3 Phase -->
+    <div class="phase-divider">
+      <h2>Q3 2025: Campaign Launch</h2>
+      <p>Initial rollout with July/August activations</p>
+    </div>
+
+    <!-- July 2025 -->
+    <div class="month-section">
+      <h3 class="month-header">JULY 2025</h3>
+      
+      <div class="campaign-grid">
+        <div class="campaign-card">
+          <div class="card-header">
+            <span class="category-tag tag-wa">WHISKY ADVOCATE</span>
+          </div>
+          <h4 class="card-title">Summer Campaign Start</h4>
+          <p class="card-subtitle">Sponsored Article Package</p>
+          <ul class="deliverable-list">
+            <li class="deliverable-item">
+              <span class="deliverable-name">Homepage Placement</span>
+              <span class="deliverable-date">Full Month</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Instagram Post #1</span>
+              <span class="deliverable-date">July 24</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">WhiskyNotes</span>
+              <span class="deliverable-date">July 29</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Dedicated Email</span>
+              <span class="deliverable-date">July 30</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Paid Social</span>
+              <span class="deliverable-date">July 24 - Aug 24</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Native Extension</span>
+              <span class="deliverable-date">July 24 - Aug 24</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="campaign-card">
+          <div class="card-header">
+            <span class="category-tag tag-trade">TRADE</span>
+          </div>
+          <h4 class="card-title">Trade Communications</h4>
+          <ul class="deliverable-list">
+            <li class="deliverable-item">
+              <span class="deliverable-name">MW Blast #1</span>
+              <span class="deliverable-date">July 28 <span class="ready-badge">READY</span></span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">SND #1</span>
+              <span class="deliverable-date">July 23 <span class="ready-badge">READY</span></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- August 2025 -->
+    <div class="month-section">
+      <h3 class="month-header">AUGUST 2025</h3>
+      
+      <div class="campaign-grid">
+        <div class="campaign-card">
+          <div class="card-header">
+            <span class="category-tag tag-social">SOCIAL MEDIA</span>
+          </div>
+          <h4 class="card-title">Digital Continuation</h4>
+          <ul class="deliverable-list">
+            <li class="deliverable-item">
+              <span class="deliverable-name">Instagram Post #2</span>
+              <span class="deliverable-date">August 4</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Paid Social Campaign</span>
+              <span class="deliverable-date">Through Aug 24</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Native Extension</span>
+              <span class="deliverable-date">Through Aug 24</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="campaign-card">
+          <div class="card-header">
+            <span class="category-tag tag-wa">WHISKY ADVOCATE</span>
+            <span class="due-badge">DUE: AUG 1</span>
+          </div>
+          <h4 class="card-title">September Prep</h4>
+          <p style="margin-top:10px;font-size:14px;color:#718096;">
+            Talking points and images due for September WA sponsored article package
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 Phase -->
+    <div class="phase-divider">
+      <h2>Q4 2025: Fall Intensification</h2>
+      <p>Expanded presence through September and November</p>
+    </div>
+
+    <!-- September 2025 -->
+    <div class="month-section">
+      <h3 class="month-header">SEPTEMBER 2025</h3>
+      
+      <div class="campaign-grid">
+        <div class="campaign-card">
+          <div class="card-header">
+            <span class="category-tag tag-wa">WHISKY ADVOCATE</span>
+          </div>
+          <h4 class="card-title">Fall Campaign</h4>
+          <p class="card-subtitle">Sponsored Article Package</p>
+          <ul class="deliverable-list">
+            <li class="deliverable-item">
+              <span class="deliverable-name">Homepage Placement</span>
+              <span class="deliverable-date">Full Month</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">WhiskyNotes</span>
+              <span class="deliverable-date">Sept 9</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Instagram Posts (2x)</span>
+              <span class="deliverable-date">Sept 10, 17</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Dedicated Email</span>
+              <span class="deliverable-date">Sept 15</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Paid Social</span>
+              <span class="deliverable-date">Sept 1-30</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Native Extension</span>
+              <span class="deliverable-date">Sept 1-30</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="campaign-card">
+          <div class="card-header">
+            <span class="category-tag tag-trade">TRADE</span>
+            <span class="due-badge">CREATIVE: SEPT 10</span>
+          </div>
+          <h4 class="card-title">September Trade</h4>
+          <ul class="deliverable-list">
+            <li class="deliverable-item">
+              <span class="deliverable-name">SND #2</span>
+              <span class="deliverable-date">Sept 8</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">MW Blast #2</span>
+              <span class="deliverable-date">Sept 24</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- November 2025 -->
+    <div class="month-section">
+      <h3 class="month-header">NOVEMBER 2025</h3>
+      
+      <div class="campaign-grid">
+        <div class="campaign-card">
+          <div class="card-header">
+            <span class="category-tag tag-wa">WHISKY ADVOCATE</span>
+            <span class="due-badge">DUE: OCT 1</span>
+          </div>
+          <h4 class="card-title">Holiday Campaign</h4>
+          <p class="card-subtitle">Sponsored Article Package</p>
+          <ul class="deliverable-list">
+            <li class="deliverable-item">
+              <span class="deliverable-name">Homepage Placement</span>
+              <span class="deliverable-date">Full Month</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Instagram Posts (2x)</span>
+              <span class="deliverable-date">Nov 5, 18</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">WhiskyNotes</span>
+              <span class="deliverable-date">Nov 11</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Dedicated Email</span>
+              <span class="deliverable-date">Nov 19</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Paid Social</span>
+              <span class="deliverable-date">Nov 1-30</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">Native Extension</span>
+              <span class="deliverable-date">Nov 1-30</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="campaign-card">
+          <div class="card-header">
+            <span class="category-tag tag-trade">TRADE</span>
+          </div>
+          <h4 class="card-title">Holiday Trade Push</h4>
+          <ul class="deliverable-list">
+            <li class="deliverable-item">
+              <span class="deliverable-name">SND #3</span>
+              <span class="deliverable-date">Nov 13</span>
+            </li>
+            <li class="deliverable-item">
+              <span class="deliverable-name">SND #4</span>
+              <span class="deliverable-date">Nov 20</span>
+            </li>
+          </ul>
+          <p style="margin-top:15px;font-size:13px;color:#718096;">
+            Due dates: 8/26, 10/30, 11/6
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trade Summary -->
+    <div class="trade-summary">
+      <h3>Trade Deliverables Overview</h3>
+      <div class="trade-grid">
+        <div class="trade-column">
+          <h4>Market Watch Blasts (2x)</h4>
+          <div class="trade-item">July 28 <span class="ready-badge">READY</span></div>
+          <div class="trade-item">September 24 <span style="color:#e53e3e;font-weight:600;">(Creative due 9/10)</span></div>
+        </div>
+        <div class="trade-column">
+          <h4>Shanken News Daily (4x)</h4>
+          <div class="trade-item">July 23 <span class="ready-badge">READY</span></div>
+          <div class="trade-item">September 8 <span style="color:#718096;">(Due 8/26)</span></div>
+          <div class="trade-item">November 13 <span style="color:#718096;">(Due 10/30)</span></div>
+          <div class="trade-item">November 20 <span style="color:#718096;">(Due 11/6)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Added Value -->
+    <div class="added-value">
+      <h2>Added Value Package</h2>
+      <div class="year">2026</div>
+      <h3 style="font-weight:400;margin-bottom:20px;">Sponsored Article Program</h3>
+      <ul class="added-value-list">
+        <li>Article + Homepage Placement</li>
+        <li>Dedicated Email Campaign</li>
+        <li>WhiskyNotes Newsletter Feature</li>
+        <li>Instagram Post</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
